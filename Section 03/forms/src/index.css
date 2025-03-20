@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 10px;
+  background-color: #2DD4BF;
+}
+
+.input {
+  border-radius: 100px;
+  border: 1px solid black;
+  margin-block: 10px;
+  display: block;
+  height: 2rem;
+  text-indent: 10px;
+}
+
+input[type="submit"] {
+  padding: 10px;
+}
+section{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+input{
+  margin: 0;
+  margin-bottom: 10px;
+}
+button{
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+}
+fieldset{
+  display: flex;
+  flex-direction: column;
+
+}
