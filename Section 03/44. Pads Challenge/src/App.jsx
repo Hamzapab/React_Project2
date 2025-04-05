@@ -5,18 +5,22 @@ import Pad from "./Pad"
 export default function App() {
 
 
-    const [padsArr, setPadsArr] = useState(pads)
 
   
     function setToggle(id){
         console.log("clicked")
         console.log(id)
+        setPadsArr(prevPads => {
+            return prevPads.map(pad => {
+                return pad.id === id ? {...pad, on: !pad.on} : pad
+            })
+        })
     }
 
     console.log(padsArr)
 
     const buttonElements = padsArr.map(e =>(
-        <Pad toggle={setToggle} data={e}  key={e.id} />
+        <Pad toggle={setToggle} id={e.id} data={e} on={e.on} key={e.id} />
     ))
 
     return (

@@ -2,7 +2,6 @@ import { useState } from "react";
 import pads from "./pads";
 
 export default function Pad(props){
-    let [padState, setPadState] = useState(props.data.on)
 
     function handleClick(){
         setPadState(function(prev){
@@ -14,6 +13,6 @@ export default function Pad(props){
         backgroundColor:props.data.color
     }
     return(
-        <button onClick={props.toggle} style={style} className={padState?"on":"off"}></button>
+        <button onClick={()=> props.toggle(props.id)} style={style} className={props.on?"on":"off"}></button>
     )
 }
