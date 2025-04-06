@@ -40,6 +40,8 @@ export default function Form(){
 
     async function  handleRecipeShown(){
        const generatedRecipe = await getRecipeFromMistral(ingredients)
+       setReceipe(generatedRecipe)
+       console.log(generatedRecipe)
     }
     
 

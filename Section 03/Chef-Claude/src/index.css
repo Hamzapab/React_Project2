@@ -211,8 +211,16 @@ ul.ingredients-list > li {
   line-height: 28px;
   font-size: 1.125rem;
   font-weight: 400;
+  padding: 20px 0;
+  padding-bottom: 50px;
 }
-
+.suggested-recipe-container h1, .suggested-recipe-container h2, .suggested-recipe-container h3{
+  margin-bottom: 15px;
+}
+.suggested-recipe-container ul , .suggested-recipe-container ol{
+  padding: 10px 0;
+  padding-left: 40px;
+}
 .suggested-recipe-container ul li, .suggested-recipe-container ol li {
   margin-bottom: 8px;
 }
