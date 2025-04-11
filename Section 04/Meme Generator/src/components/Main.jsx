@@ -7,22 +7,35 @@ export default function Main() {
         topText:'One does not simply',
         bottomText:'Walk into Mordor'
     })
+
+    function handleChange(event){
+        const {value,name} = event.currentTarget;
+        setMemeInfo(prev=>({
+            ...prev,
+            [name]:value
+        }))
+    }
+
     return (
         <main>
             <div className="form">
                 <label>Top Text
                     <input
                         type="text"
-                        placeholder="One does not simply"
+                        placeholder="type"
                         name="topText"
+                        onChange={handleChange}
+                        value={memeInfo.value}
                     />
                 </label>
 
                 <label>Bottom Text
                     <input
                         type="text"
-                        placeholder="Walk into Mordor"
-                        name="bottomText"
+                        placeholder="type"
+                        name="bottomText"  
+                        onChange={handleChange}    
+                        value={memeInfo.value}
                     />
                 </label>
                 <button>Get a new meme image 🖼</button>
