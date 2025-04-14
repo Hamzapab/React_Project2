@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 
 export default function Main() {
     const [memeArray, setMemeArray] = useState([])
+    
     const [memeInfo , setMemeInfo ] = useState({
         imgUrl:'http://i.imgflip.com/1bij.jpg',
         topText:'One does not simply',
