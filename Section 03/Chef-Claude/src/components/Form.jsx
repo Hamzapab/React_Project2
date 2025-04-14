@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Receip } from "./Receip";
 import { Ingredient } from "./Ingrediant";
 import { getRecipeFromMistral } from "../../ai"
@@ -34,16 +34,24 @@ export default function Form(){
         }
     }
 
-    
+  
     // Show Recipe 
     let [recipe, setReceipe] = useState("")
-
     async function  handleRecipeShown(){
        const generatedRecipe = await getRecipeFromMistral(ingredients)
        setReceipe(generatedRecipe)
-       console.log(generatedRecipe)
     }
     
+      // use Ref () Application
+      const recipeSection = useRef(null)
+      console.log(recipeSection)
+  
+      useEffect(()=>{
+         if(recipe !== "" && recipeSection){
+          recipeSection.current.scrollIntoView({behavior:"smooth"})
+         }
+      },[recipe])
+
 
     const ingredientsList = ingredients.map((item)=>  <li key={item}>{item}</li>);
     return (
@@ -61,7 +69,12 @@ export default function Form(){
           <button className="btn1">Add Ingredients</button>
         </form>
         {ingredients.length > 0 && (
-          <Ingredient ingredientsList={ingredientsList} ingredients={ingredients} handleRecipeShown={handleRecipeShown} />
+          <Ingredient 
+            ref={recipeSection}
+            ingredientsList={ingredientsList}
+            ingredients={ingredients} 
+            handleRecipeShown={handleRecipeShown} 
+          />
         )}
         { recipe && <Receip recipe={recipe} />}
       </div>

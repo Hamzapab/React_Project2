@@ -8,7 +8,7 @@ export function Ingredient(props){
         {props.ingredients.length > 3 && (
           <div className="get-recipe-container">
             <div>
-              <h3>Ready for a recipe?</h3>
+              <h3 ref={props.recipeSection}>Ready for a recipe?</h3>
               <p>Generate a recipe from your list of ingredients.</p>
             </div>
             <button onClick={props.handleRecipeShown}>Get a recipe</button>

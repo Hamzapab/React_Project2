@@ -24,6 +24,7 @@ export default function Main() {
             imgUrl:url
         }))
     }
+    
     function handleChange(event){
         const {value,name} = event.currentTarget;
         setMemeInfo(prev=>({
