@@ -1,0 +1,4 @@
+[build]
+base = "Tenzies"
+publish = "dist"
+command = "npm run build"
