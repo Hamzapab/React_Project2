@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+body {
+  margin: 0;
+  background-color: #222222;
+  color: white;
+}
+
+.theWord span.letterParent{
+  width: 40px;
+  height: 50px;
+  background-color: #333333;
+  margin: 0 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid white;
+  text-transform: uppercase;
+}
+
+div.lost::before {
+    content: "💀";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 0.85rem;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.keybord button{
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
+  width: 35px;
+  aspect-ratio: 1/1;
+  /* background-color: #FFA500; */
+  margin:3px;
+  border-radius: 5px;
+}
