@@ -3,11 +3,15 @@ import Header from './components/Header'
 import Lang from './components/Lang'
 import Keyboard from './components/Keyboard'
 import { getRandomWord } from '../utils'
+import { useWindowSize } from 'react-use'
+import Confetti from 'react-confetti'
 import clsx from 'clsx'
 import './App.css'
 import './index.css'
 
+
 function App(){
+  const { width, height } = useWindowSize()
   // States Values
   const [currentWord, setWord] = useState(()=>getRandomWord());
   const [guessedLetters, setGuessedLetters] = useState([]);
@@ -19,7 +23,7 @@ function App(){
   const uniqueLetters = Array.from(new Set(currentWord));
   const isWrongGuess = guessedLetters[guessedLetters.length - 1] ? !currentWord.includes(guessedLetters[guessedLetters.length - 1]) : false;
   const correcTGuessCount = guessedLetters.filter(l=>currentWord.includes(l)).length;
-  const isWon =  correcTGuessCount == uniqueLetters.length;
+  const isWon =  correcTGuessCount >= uniqueLetters.length - 1;
   const isLoss = wrongGuessCount >= 8;  
 
   const isGameOver =  isWon ||  isLoss;
@@ -56,6 +60,7 @@ function App(){
         <span  className={clsx({
           "opacity-0": !isGuessed, 
           "opacity-100": isGuessed || index == randomLetterHint  || isHint, 
+          "opacity-100 text-red-500" : !isGuessed && isLoss, 
         })} 
         aria-disabled='true'
         aria-hidden="true"
@@ -65,6 +70,12 @@ function App(){
 
   return(
     <main>
+       {isWon &&
+          <Confetti
+              width={width}
+              height={height}
+          />
+       }
       <Header  isWon={isWon} isLoss={isLoss} lostLang={lostLang} setLostLang={setLostLang}  wrongGuessCount={wrongGuessCount} isWrongGuess={isWrongGuess}/>
       <Lang wrongGuessCount={wrongGuessCount} />
       <div className="theWord mt-8">

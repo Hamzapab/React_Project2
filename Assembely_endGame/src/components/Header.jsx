@@ -2,6 +2,7 @@ import {useEffect} from "react";
 import {languages} from "../../languages.js"
 import {getFarewellText} from "../../utils.js"
 
+
 export default function Header({isWon,isLoss,wrongGuessCount,isWrongGuess,lostLang,setLostLang}){
     
     useEffect(() => {
