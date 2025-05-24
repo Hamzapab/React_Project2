@@ -1,12 +1,28 @@
-# React + Vite
+## 🧠 Assembly End Game
+A fun and challenging word guessing game where the stakes are high — guess the word before all programming languages vanish and only Assembly remains!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# 🚀 Overview
+Assembly End Game is a twist on the classic hangman-style game. The player must guess a hidden word, one letter at a time, but with a nerdy twist — each incorrect guess removes a beloved programming language. Fail to guess the word in time, and you’re left with only the harsh, unforgiving world of Assembly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built with React and styled using Tailwind CSS.
 
-## Expanding the ESLint configuration
+# 🛠 Features
+🔠 Dynamic word-guessing gameplay
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+💡 Smart hint system (not too easy!)
+
+🧩 Unique mechanic: Programming languages disappear with each mistake
+
+🎨 Responsive and clean Tailwind-powered UI
+
+🔁 "Reset Game" button for new word challenges
+
+# 📦 Tech Stack
+⚛️ React (Hooks & Functional Components)
+
+🌬 Tailwind CSS
+
+💡 JavaScript (ES6+)
+
+🧠 Git for version control
